@@ -3,7 +3,7 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "{{.DOCKER_REGISTRY}}/jamesob131/nodeapp:{{.VERSION}}"
+      template: "{{.DOCKER_REGISTRY}}/natdrestonhubtrainingenv1/nodeapp:{{.VERSION}}"
   artifacts:
   - imageName: changeme
     workspace: .
@@ -17,7 +17,7 @@ profiles:
   build:
     tagPolicy:
       envTemplate:
-        template: "{{.DOCKER_REGISTRY}}/jamesob131/nodeapp:{{.DIGEST_HEX}}"
+        template: "{{.DOCKER_REGISTRY}}/natdrestonhubtrainingenv1/nodeapp:{{.DIGEST_HEX}}"
     artifacts:
     - docker: {}
     local: {}
@@ -27,5 +27,5 @@ profiles:
       - name: nodeapp
         chartPath: charts/nodeapp
         setValueTemplates:
-          image.repository: "{{.DOCKER_REGISTRY}}/jamesob131/nodeapp"
+          image.repository: "{{.DOCKER_REGISTRY}}/natdrestonhubtrainingenv1/nodeapp"
           image.tag: "{{.DIGEST_HEX}}"
